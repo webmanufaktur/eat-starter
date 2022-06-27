@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ seotitle or title }}</title>
+        <meta name="robots" content="{{ seorobots }}" />
+        <meta name="description" content="{{ seodesc }}" />
+        <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+        <link
+            rel="stylesheet"
+            href="/assets/css/tailwind.dist.css?v={{ build.timestamp }}"
+        />
+        <script src="/assets/js/scripts.dist.js?v={{ build.timestamp }}"></script>
+    </head>
+    <body class="bg-slate-50 py-12 px-6">
+        <h1>
+            <a href="/">
+                <img
+                    src="/assets/images/eat-starter.svg"
+                    alt="E-A-T Starter KIT"
+                    class="h-24 mx-auto mb-12"
+                />
+                <span class="sr-only"
+                    >E-A-T Starter - Eleventy, Alpine, Tailwind Starter</span
+                >
+            </a>
+        </h1>
+        <main class="">{{ content | safe }}</main>
+
+        <footer>
+            <ul>
+                <li>Eleventy (11ty)</li>
+                <li>AlpineJS</li>
+                <li>TailwindCSS</li>
+                <li>Github</li>
+                <li>Netlify</li>
+            </ul>
+        </footer>
+    </body>
+</html>

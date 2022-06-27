@@ -1,0 +1,10 @@
+{
+    "title": "Website title",
+    "description": "My awesome website powered by 11ty, AlpineJS, and TailwindCSS. Plus alot more.",
+    "lang": "en",
+    "locale": "en_EN",
+    "domain": "mydomain.tld",
+    "url": "https://mydomain.tld",
+    "email": "contact@mydomain.tld",
+    "author": "Me, Myself, and I"
+}
