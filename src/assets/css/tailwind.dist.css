@@ -971,6 +971,10 @@ video {
   border-width: 0;
 }
 
+.static {
+  position: static;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -980,12 +984,24 @@ video {
   margin-bottom: 3rem;
 }
 
+.contents {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
+
 .h-24 {
   height: 6rem;
 }
 
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .scroll-smooth {
@@ -1005,4 +1021,9 @@ video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }

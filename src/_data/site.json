@@ -3,8 +3,11 @@
     "description": "My awesome website powered by 11ty, AlpineJS, and TailwindCSS. Plus alot more.",
     "lang": "en",
     "locale": "en_EN",
-    "domain": "mydomain.tld",
-    "url": "https://mydomain.tld",
-    "email": "contact@mydomain.tld",
-    "author": "Me, Myself, and I"
+    "domain": "eat-starter.netlify.app",
+    "url": "https://eat-starter.netlify.app",
+    "email": "eat-starter@webmanufaktur.net",
+    "author": "webmanufaktur",
+    "performace.netlify": "https://web.dev/measure/?url=https%3A%2F%2Feat-starter.netlify.app%2F",
+    "performace.vercel": "https://web.dev/measure/?url=https%3A%2F%2Feat-starter.vercel.app%2F",
+    "performace.cloudflare": "https://web.dev/measure/?url=https%3A%2F%2Feat-starter.pages.dev%2F"
 }

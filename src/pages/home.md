@@ -1,9 +1,10 @@
 ---
 title: "E — A — T Starter"
-seotitle: "SSG Starter with Eleventy (11ty), AlpinJS, and TailwindCSS"
+seotitle: "EAT — SSG Starter with Eleventy (11ty), AlpinJS, and TailwindCSS"
 seorobots: "index, follow"
 seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpinJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
 permalink: /
+layout: home.html
 date: 2022-06-20
 ---
 
@@ -11,36 +12,33 @@ date: 2022-06-20
 
 <abbr title="Eleventy - AlpineJS - TailwindCSS">E-A-T</abbr> Starter Kit for Static Websites using Eleventy (11ty), AlpinJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included.
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam quod vel
-impedit neque nam deleniti. Numquam, fugit explicabo odit modi ad
-ratione quae.
+### E &mdash; Eleventy (11ty)
 
-## E &mdash; Eleventy (11ty)
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-corporis officia molestias, quasi blanditiis doloremque id perspiciatis
-provident ullam eligendi adipisci illum officiis ipsum ea eius sequi
-dignissimos quis atque!
+Eleventy, a simpler static site generator.
 
 [Eleventy (11ty)][1]
 
-## A &mdash; AlpineJS
+### A &mdash; AlpineJS
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-corporis officia molestias, quasi blanditiis doloremque id perspiciatis
-provident ullam eligendi adipisci illum officiis ipsum ea eius sequi
-dignissimos quis atque!
+Your new, lightweight, JavaScript framework.
 
 [AlpineJS][2]
 
-## T &mdash; TailwindCSS
+### T &mdash; TailwindCSS
 
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea maiores
-saepe necessitatibus ipsum, tempora labore sequi pariatur temporibus
-ratione atque!
+A utility-first CSS framework to build any design, directly in your markup.
 
 [TailwindCSS][3]
+
+## Hosting
+
+-   [Netlify][4]
+-   [Vercel][5]
+-   [Cloudflare Pages][6]
 
 [1]: https://www.11ty.dev/
 [2]: https://alpinejs.dev/
 [3]: https://tailwindcss.com/
+[4]: https://eat-starter.netlify.app/
+[5]: https://eat-starter.vercel.app/
+[6]: https://eat-starter.pages.dev/

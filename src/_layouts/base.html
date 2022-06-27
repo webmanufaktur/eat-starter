@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="{{ site.lang }}" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
         </h1>
         <main class="">{{ content | safe }}</main>
 
-        <footer>
+        <footer class="hidden">
             <ul>
                 <li>Eleventy (11ty)</li>
                 <li>AlpineJS</li>
@@ -37,6 +37,34 @@
                 <li>Github</li>
                 <li>Netlify</li>
             </ul>
+            <ul>
+                <li>
+                    <a
+                        href="https://web.dev/measure/?url=https%3A%2F%2Feat-starter.netlify.app%2F"
+                        rel="nofollow noreferrer noopener"
+                        target="_blank"
+                        >Performance testing: Netlify</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://web.dev/measure/?url=https%3A%2F%2Feat-starter.vercel.app%2F"
+                        rel="nofollow noreferrer noopener"
+                        target="_blank"
+                        >Performance testing: Vercel</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://web.dev/measure/?url=https%3A%2F%2Feat-starter.pages.dev%2F"
+                        rel="nofollow noreferrer noopener"
+                        target="_blank"
+                        >Performance testing: Cloudflare</a
+                    >
+                </li>
+            </ul>
+
+            Version: {{ build.version }}
         </footer>
     </body>
 </html>
