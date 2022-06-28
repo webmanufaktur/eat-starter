@@ -1,16 +1,15 @@
 ---
 title: "E — A — T Starter"
-seotitle: "EAT — SSG Starter with Eleventy (11ty), AlpinJS, and TailwindCSS"
+seotitle: "EAT — SSG Starter with Eleventy (11ty), AlpineJS, and TailwindCSS"
 seorobots: "index, follow"
-seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpinJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
+seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
 permalink: /
-layout: home.html
-date: 2022-06-20
+layout: splash.html
 ---
 
 ## E-A-T Starter
 
-<abbr title="Eleventy - AlpineJS - TailwindCSS">E-A-T</abbr> Starter Kit for Static Websites using Eleventy (11ty), AlpinJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included.
+<abbr title="Eleventy - AlpineJS - TailwindCSS">E-A-T</abbr> Starter Kit for Static Websites using Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included.
 
 ### E &mdash; Eleventy (11ty)
 

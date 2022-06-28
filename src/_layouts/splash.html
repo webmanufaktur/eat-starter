@@ -1,0 +1,38 @@
+---
+layout: base.html
+---
+
+<div class="">
+    <div class="max-w-xl mb-16 text-center mx-auto">
+        <p class="text-xl">
+            E-A-T Starter Kit for Static Websites using Eleventy (11ty),
+            AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included.
+        </p>
+    </div>
+    <div class="max-w-6xl mx-auto">
+        <ul class="grid grid-cols-3 auto-rows-fr gap-8">
+            {%- for tool in tools -%}
+            <li class="bg-white rounded-lg shadow-md p-6">
+                <a
+                    href="{{ tool.url }}"
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    class="flex flex-col h-full"
+                >
+                    <span class="block text-lg font-semibold mb-2"
+                        >{{ tool.title }}</span
+                    >
+                    <span class="block mb-3 grow text-slate-700"
+                        >{{ tool.desc }}</span
+                    >
+                    <span
+                        class="block py-3 text-white font-semibold uppercase px-5 text-sm tracking-wider text-center rounded-lg bg-gradient-to-r from-fuchsia-600 to-orange-600"
+                        >visit website &rarr;</span
+                    >
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>
+<div class="mt-96">{{ content | safe }}</div>
