@@ -19,7 +19,6 @@ const mila = require("markdown-it-link-attributes");
 const markdownItAnchor = require("markdown-it-anchor");
 const CleanCSS = require("clean-css");
 const { minify } = require("terser");
-// const dictionary = { "/seo/": ["Alexander", "SEO"] };
 
 // Details about HowTo enable MarkdownIt Image Figures
 // https://github.com/Antonio-Laguna/markdown-it-image-figures
@@ -198,9 +197,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("img/");
     eleventyConfig.addPassthroughCopy("src/robots.txt");
     eleventyConfig.addPassthroughCopy("src/.htaccess");
-    eleventyConfig.addPassthroughCopy({
-        "./node_modules/alpinejs/dist/cdn.js": "assets/js/alpine.js",
-    });
 
     // Inline SVGs
     eleventyConfig.addPlugin(svgContents);

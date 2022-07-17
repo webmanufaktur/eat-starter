@@ -1,10 +1,30 @@
 ---
 title: "E — A — T Starter"
-seotitle: "EAT — SSG Starter with Eleventy (11ty), AlpineJS, and TailwindCSS"
+seotitle: "Starter with Eleventy (11ty), AlpineJS, and TailwindCSS"
+seodescription: "Static Site Generator Starter Kit with Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
 seorobots: "index, follow"
-seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
-permalink: /
-layout: splash.html
+permalink: "/"
+layout: "starter.html"
+tools:
+    - label: "Eleventy"
+      description: "A Simpler Static Site Generator"
+      url: "https://www.11ty.dev/"
+    - label: "AlpineJS"
+      description: "New Lightweight JavaScript framework."
+      url: "https://alpinejs.dev/"
+    - label: "TailwindCSS"
+      description: "Utility-first CSS framework directly in your markup."
+      url: "https://tailwindcss.com/"
+    - label: "Go get it!"
+      description: "Your new 11ty starter."
+      url: "https://github.com/wbmnfktr/eat-starter/"
+hostings:
+    - label: "Netlify"
+      description: "Bring it all together"
+      url: "https://www.netlify.com/"
+    - label: "Vercel"
+      description: "Develop. Preview. Ship."
+      url: "https://vercel.com/"
 ---
 
 ## E-A-T Starter

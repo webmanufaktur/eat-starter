@@ -1,0 +1,81 @@
+---
+layout: base.html
+---
+
+<h1>EAT STARTER</h1>
+<hr />
+
+This starter is nothing special. Really.
+<br />
+It just uses some of the most usefull and recent tools available. Some sane
+default &ndash; at least for me and my projects &ndash; you can change anytime
+you want. All I wanted for my setups was a really nice working static site
+generator, some nice and easy JavaScript and easy styling. Ok... and I wanted
+inlined CSS and JS, some default SEO fields and even some autolinking for
+interlinking pages that may come up in projects.
+
+<hr />
+<!-- TOOLS -->
+<h2>Tools used</h2>
+<div class="max-w-4xl py-12 mx-auto">
+    <ul class="grid grid-cols-4 gap-4">
+        {% for tool in tools %}
+        <li class="p-6 text-gray-800 bg-white rounded-lg shadow">
+            <a
+                href="{{ tool.url }}"
+                rel="nofollow noreferrer noopener"
+                target="_blank"
+                class="block"
+            >
+                <strong>{{ tool.label }}</strong>
+                <br />
+                <span class="hidden">{{ tool.description }}</span>
+                <br />
+                <span class="text-indigo-400 underline">{{ tool.url }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<hr />
+<h2>Hostings that work<sup>*</sup></h2>
+
+<!-- HOSTING -->
+<div class="max-w-4xl py-12 mx-auto">
+    <ul class="grid grid-cols-4 gap-4">
+        {% for hosting in hostings %}
+        <li class="p-6 text-gray-800 bg-white rounded-lg shadow">
+            <a
+                href="{{ hosting.url }}"
+                rel="nofollow noreferrer noopener"
+                target="_blank"
+                class="block"
+            >
+                <strong>{{ hosting.label }}</strong>
+                <br />
+                <span>{{ hosting.description }}</span>
+                <br />
+                <span class="text-indigo-400 underline">{{ hosting.url }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <small>
+            <sup>*</sup>
+            Sorry, Cloudflare users but this setup didn't really work out on
+            <strong>Cloudflare Pages</strong>. After fiddling around with it for
+            hours I just scraped it from the list. Maybe you have way more luck
+            with it than I had.
+        </small>
+    </p>
+</div>
+
+<!-- FOOTER -->
+<hr />
+<div class="text-sm tracking-wide text-center text-gray-500 text-bold">
+    Made with Sauvignon Blanc, NVIM and all the nice things mentioned above.
+    <br />
+    <span class="font-bold">wbmnfktr 2022</span>
+</div>
