@@ -4,7 +4,10 @@ seotitle: "EAT — SSG Starter with Eleventy (11ty), AlpineJS, and TailwindCSS"
 seorobots: "index, follow"
 seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
 permalink: /
-layout: splash.html
+layout: home.html
+intro:
+    headline: Eleventy AlpineJS TailwindCSS
+    subline: The smart starter template
 ---
 
 ## E-A-T Starter

@@ -5,11 +5,13 @@
     "main": "README.md",
     "scripts": {
         "build:clean": "del _site",
+        "watch:clean": "del _site",
         "watch:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./src/assets/css/tailwind.dist.css --watch",
         "build:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./src/assets/css/tailwind.dist.css --minify",
         "watch:eleventy": "npx @11ty/eleventy --serve",
+        "debug:eleventy": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
         "build:eleventy": "npx @11ty/eleventy",
-        "watch:js": "npx esbuild ./src/assets/js/scripts.js --bundle --target=es2018  --watch --outfile=./src/assets/js/scripts.dist.js",
+        "watch:js": "npx esbuild ./src/assets/js/scripts.js --bundle --target=es2018 --minify --watch --outfile=./src/assets/js/scripts.dist.js",
         "build:js": "npx esbuild ./src/assets/js/scripts.js --bundle --target=es2018 --minify --outfile=./src/assets/js/scripts.dist.js",
         "start": "npm-run-all --parallel watch:*",
         "build": "npm-run-all build:*"
@@ -22,9 +24,7 @@
         "11ty",
         "eleventy",
         "AlpineJS",
-        "TailwindCSS",
-        "HTML Minified",
-        "CSS Inlined"
+        "TailwindCSS"
     ],
     "author": "webmanufaktur.net",
     "license": "ISC",
@@ -33,7 +33,7 @@
     },
     "homepage": "https://github.com/webmanufaktur/eat-starter#readme",
     "dependencies": {
-        "@11ty/eleventy": "^1.0.1",
+        "@11ty/eleventy": "^2.0.0-canary.15",
         "@11ty/eleventy-img": "^1.1.0",
         "@11ty/eleventy-plugin-rss": "^1.1.2",
         "@fullhuman/postcss-purgecss": "^4.0.3",

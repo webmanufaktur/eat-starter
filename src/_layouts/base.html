@@ -12,34 +12,15 @@
             rel="stylesheet"
             href="/assets/css/tailwind.dist.css?v={{ build.timestamp }}"
         />
+
         <script src="/assets/js/scripts.dist.js?v={{ build.timestamp }}"></script>
     </head>
-    <body class="bg-neutral-50">
-        <h1>
-            <a href="/">
-                <img
-                    src="/assets/images/eat-starter.svg"
-                    alt="E-A-T Starter KIT"
-                    class="h-24 mx-auto my-12"
-                    width="266"
-                    height="49"
-                />
-                <span class="sr-only"
-                    >E-A-T Starter - Eleventy, Alpine, Tailwind Starter</span
-                >
-            </a>
-        </h1>
-        <main class="">{{ content | safe }}</main>
+    <body class="bg-white-50">
+        {% include "header.html" %} {% if intro %} {% include "intro.html" %} {%
+        endif %}
 
-        <footer class="hidden p-12 bg-slate-200">
-            <ul>
-                <li>
-                    <a href="https://github.com/webmanufaktur/eat-starter"
-                        >github/eat-starter</a
-                    >
-                </li>
-            </ul>
-            Version: {{ build.version }}
-        </footer>
+        <main class="hidden">{{ content | safe }}</main>
+
+        {% include "footer.html" %}
     </body>
 </html>
