@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ config.lang }}" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ seo.title or title }}</title>
+    <meta name="robots" content="{{ seo.robots }}" />
+    <meta name="description" content="{{ seo.desc }}" />
+    <link rel="canonical" href="{{ config.url }}{{ page.url }}" />
+    <link
+      rel="preload"
+      href="/assets/css/tailwind.dist.css?v={{ config.timestamp }}"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="/assets/js/alpine.dist.js?v={{ config.timestamp }}"
+      as="script"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/tailwind.dist.css?v={{ config.timestamp }}"
+    />
+    <script src="/assets/js/alpine.dist.js?v={{ config.timestamp }}"></script>
+  </head>
+  <body class="bg-neutral-200">
+    {{ content | safe }}
+  </body>
+</html>

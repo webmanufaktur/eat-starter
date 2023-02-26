@@ -1,65 +1,61 @@
 {
-    "name": "eat-starter",
-    "version": "1.0.0",
-    "description": "E-A-T Starter - Eleventy, Alpine, Tailwind Starter",
-    "main": "README.md",
-    "scripts": {
-        "build:clean": "del _site",
-        "watch:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./src/assets/css/tailwind.dist.css --watch",
-        "build:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./src/assets/css/tailwind.dist.css --minify",
-        "watch:eleventy": "npx @11ty/eleventy --serve",
-        "build:eleventy": "npx @11ty/eleventy",
-        "watch:js": "npx esbuild ./src/assets/js/scripts.js --bundle --target=es2018  --watch --outfile=./src/assets/js/scripts.dist.js",
-        "build:js": "npx esbuild ./src/assets/js/scripts.js --bundle --target=es2018 --minify --outfile=./src/assets/js/scripts.dist.js",
-        "start": "npm-run-all --parallel watch:*",
-        "build": "npm-run-all build:*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/webmanufaktur/eat-starter.git"
-    },
-    "keywords": [
-        "11ty",
-        "eleventy",
-        "AlpineJS",
-        "TailwindCSS",
-        "HTML Minified",
-        "CSS Inlined"
-    ],
-    "author": "webmanufaktur.net",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/webmanufaktur/eat-starter/issues"
-    },
-    "homepage": "https://github.com/webmanufaktur/eat-starter#readme",
-    "dependencies": {
-        "@11ty/eleventy": "^1.0.2",
-        "@11ty/eleventy-img": "^2.0.1",
-        "@11ty/eleventy-plugin-rss": "^1.2.0",
-        "@fullhuman/postcss-purgecss": "^5.0.0",
-        "@tailwindcss/line-clamp": "^0.4.2",
-        "@tailwindcss/typography": "^0.5.9",
-        "alpinejs": "^3.11.1",
-        "autoprefixer": "^10.4.13",
-        "clean-css": "^5.3.2",
-        "cssnano": "^5.1.14",
-        "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
-        "eleventy-plugin-svg-contents": "^0.7.0",
-        "eleventy-plugin-toc": "^1.1.5",
-        "esbuild": "^0.17.4",
-        "html-minifier": "^4.0.0",
-        "markdown-it": "^13.0.1",
-        "markdown-it-anchor": "^8.6.6",
-        "markdown-it-auto-crosslinker": "^1.0.1",
-        "markdown-it-image-figures": "^2.1.1",
-        "markdown-it-link-attributes": "^4.0.1",
-        "npm-run-all": "^4.1.5",
-        "postcss": "^8.4.21",
-        "postcss-cli": "^10.1.0",
-        "sass": "^1.57.1",
-        "tailwindcss": "^3.2.4",
-        "terser": "^5.16.1",
-        "del-cli": "^5.0.0"
-    },
-    "devDependencies": {}
+  "name": "eat-starter",
+  "version": "1.0.0",
+  "description": "E-A-T Starter - Eleventy, Alpine, Tailwind Starter",
+  "main": "README.md",
+  "scripts": {
+    "build:clean": "del _site",
+    "watch:clean": "del _site",
+    "watch:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --watch",
+    "build:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --minify",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "build:eleventy": "npx @11ty/eleventy",
+    "watch:alpine": "npx esbuild ./src/assets/js/alpine.js --bundle --target=es2018  --watch --outfile=./_site/assets/js/alpine.dist.js",
+    "build:alpine": "npx esbuild ./src/assets/js/alpine.js --bundle --target=es2018 --minify --outfile=./_site/assets/js/alpine.dist.js",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmanufaktur/eat-starter.git"
+  },
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "AlpineJS",
+    "TailwindCSS",
+    "HTML Minified",
+    "CSS Inlined"
+  ],
+  "author": "webmanufaktur.net",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmanufaktur/eat-starter/issues"
+  },
+  "homepage": "https://github.com/webmanufaktur/eat-starter#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "eleventy-favicon": "^1.1.3",
+    "eleventy-plugin-svg-contents": "^0.7.0",
+    "eleventy-plugin-toc": "^1.1.5",
+    "alpinejs": "^3.11.1",
+    "clean-css": "^5.3.2",
+    "del-cli": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.17.10",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-auto-crosslinker": "^1.0.1",
+    "markdown-it-image-figures": "^2.1.1",
+    "markdown-it-link-attributes": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "tailwindcss": "^3.2.7",
+    "@tailwindcss/typography": "^0.5.9"
+  },
+  "devDependencies": {}
 }

@@ -1,4 +1,4 @@
 {
-    "/about/": ["me", "myself"],
-    "/contact/": ["contact"]
+  "/about/": ["me", "myself"],
+  "/contact/": ["contact"]
 }
