@@ -85,7 +85,7 @@ async function imageShortcodeRelative(src, alt, cls, wdth = "null") {
   let file = relativeToInputPath(this.page.inputPath, src);
   let metadata = await Image(file, {
     widths: wdth,
-    formats: ["webp"],
+    formats: ["jpg, webp"],
     urlPath: "/assets/media/", // used in frontend
     outputDir: "_site/assets/media/", // used in dev
     filenameFormat: function (id, src, width, format) {
@@ -109,16 +109,41 @@ async function imageShortcodeRelative(src, alt, cls, wdth = "null") {
   );
 }
 
+async function imageShortcode(src, alt, cls, wdth = "null") {
+  let metadata = await Image(src, {
+    widths: wdth,
+    formats: ["jpg, webp"],
+    urlPath: "/assets/media/", // used in frontend
+    outputDir: "_site/assets/media/", // used in dev
+    filenameFormat: function (id, src, width, format) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+
+      return `${name}-${id}-${width}w.${format}`;
+    },
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    },
+  });
+  let imageAttributes = {
+    alt,
+    class: cls,
+    sizes: "auto",
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 // module exports
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
   // custom collection
   eleventyConfig.addCollection("featured", function (collection) {
     return collection.getAll().filter((item) => item.data.featured);
-  });
-
-  eleventyConfig.addCollection("tagGroup", function (collectionApi) {
-    return collectionApi.getFilteredByTags("post", "page");
   });
 
   // Set directories to pass through to the _site folder
@@ -160,6 +185,7 @@ module.exports = function (eleventyConfig) {
   // SHORTCODES
   // 11ty image plugin shortcode
   eleventyConfig.addNunjucksAsyncShortcode("img", imageShortcodeRelative);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   // shortcode for inserting the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -180,6 +206,28 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("excerpt", (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, "");
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+  });
+
+  //striptags
+  eleventyConfig.addFilter("striptags", (post) => {
+    return (content = post.replace(/(<([^>]+)>)/gi, ""));
+    // return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+  });
+
+  // Define a filter to make a string uppercase
+  eleventyConfig.addFilter("uppercase", function (value) {
+    if (value && typeof value === "string") {
+      return value.toUpperCase();
+    }
+    return value;
+  });
+
+  // Define a filter to capitalize the first letter of a string
+  eleventyConfig.addFilter("capitalize", function (value) {
+    if (value && typeof value === "string") {
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+    return value;
   });
 
   // FILTERS
@@ -235,21 +283,46 @@ module.exports = function (eleventyConfig) {
     return new CleanCSS({}).minify(code).styles;
   });
 
-  // TAG CLOUD
-  // Return all the tags used in a collection
-  eleventyConfig.addFilter("getAllTags", (collection) => {
-    let tagSet = new Set();
+  // Return all the authors used in a collection
+  eleventyConfig.addFilter("getAllAuthors", (collection) => {
+    let collectionSet = new Set();
     for (let item of collection) {
-      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
+      (item.data.authors || []).forEach((item) => collectionSet.add(item));
     }
-    return Array.from(tagSet);
+    return Array.from(collectionSet).sort();
   });
 
+  // Return all the categories used in a collection
+  eleventyConfig.addFilter("getAllCategories", (collection) => {
+    let collectionSet = new Set();
+    for (let item of collection) {
+      (item.data.categories || []).forEach((item) => collectionSet.add(item));
+    }
+    return Array.from(collectionSet);
+  });
+
+  // Return all the tags used in a collection
+  eleventyConfig.addFilter("getAllTags", (collection) => {
+    let collectionSet = new Set();
+    for (let item of collection) {
+      (item.data.tags || []).forEach((item) => collectionSet.add(item));
+    }
+    return Array.from(collectionSet);
+  });
+
+  // filter tags
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     return (tags || []).filter(
       (tag) => ["all", "nav", "post", "posts", "pages"].indexOf(tag) === -1
     );
   });
+
+  // exclude current item
+  eleventyConfig.addFilter("excludeCurrentItem", function (collection) {
+    return collection.filter((item) => item.inputPath !== this.page.inputPath);
+  });
+
+  // {% set filteredCollection = collection | excludeCurrentItem %}
 
   // TRANSFORMS
   // HTML MINIFIER

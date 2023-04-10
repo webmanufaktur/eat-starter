@@ -2,23 +2,8 @@
 layout: _main.html
 ---
 
-<header>
-  <div class="py-8 text-center">
-    <span>
-      <a href="/" class="font-bold text-3xl">{{ config.title }}</a>
-    </span>
-  </div>
-</header>
+{% include "header.html" %}
 
 <main class="">{{ content | safe }}</main>
 
-<footer class="p-12 text-center font-bold">
-  <ul>
-    <li>
-      <a href="https://github.com/webmanufaktur/eat-starter"
-        >github/eat-starter</a
-      >
-    </li>
-    <li>Version: {{ config.version }}</li>
-  </ul>
-</footer>
+{% include "footer.html" %}

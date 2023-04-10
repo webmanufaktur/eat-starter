@@ -4,25 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ seo.title or title }}</title>
-    <meta name="robots" content="{{ seo.robots }}" />
-    <meta name="description" content="{{ seo.desc }}" />
+
+    <!-- Favicon -->
+    {% favicon 'src/assets/images/favicon.png' %}
+
+    <!-- SEO -->
+    {% block seo %}
+    <title>{{ seotitle or title }}</title>
+    <meta name="robots" content="{{ seorobots }}" />
+    <meta name="description" content="{{ seodesc }}" />
     <link rel="canonical" href="{{ config.url }}{{ page.url }}" />
+    {% endblock %}
+
+    <!-- CSS -->
+    {% block css %}
     <link
       rel="preload"
       href="/assets/css/tailwind.dist.css?v={{ config.timestamp }}"
       as="style"
     />
     <link
-      rel="preload"
-      href="/assets/js/alpine.dist.js?v={{ config.timestamp }}"
-      as="script"
-    />
-    <link
       rel="stylesheet"
       href="/assets/css/tailwind.dist.css?v={{ config.timestamp }}"
     />
-    <script src="/assets/js/alpine.dist.js?v={{ config.timestamp }}"></script>
+    {% endblock %}
+
+    <!-- JS -->
+    {% block js %}
+    <link rel="preload" href="/assets/js/alpine.dist.js" as="script" />
+    <link rel="preload" href="/assets/js/app.dist.js" as="script" />
+    <script
+      defer
+      src="/assets/js/app.dist.js?v={{ config.timestamp }}"
+    ></script>
+    <script
+      defer
+      src="/assets/js/alpine.dist.js?v={{ config.timestamp }}"
+    ></script>
+    {% endblock %}
+
+    <!-- OG -->
+    {% block facebook %}
+    <meta property="og:title" content="{{ seotitle or title }}" />
+    {% if seodesc %}
+    <meta property="og:description" content="{{ seodesc }}" />
+    {% endif %}
+    <meta
+      property="og:image"
+      content="{{ config.url }}/assets/images/ogimage.png"
+    />
+    {% endblock %}
+
+    <!-- Twitter Meta Tags -->
+    {% block twitter %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="{{ config.domain }}" />
+    <meta property="twitter:url" content="{{ config.url }}{{ page.url }}" />
+    <meta name="twitter:title" content="{{ seotitle or title }}" />
+    {% if seodesc %}
+    <meta name="twitter:description" content="{{ seodesc }}" />
+    {% endif %}
+    <meta
+      name="twitter:image"
+      content="{{ config.url }}/assets/images/ogimage.png"
+    />
+    {% endblock %}
   </head>
   <body class="bg-neutral-200">
     {{ content | safe }}
