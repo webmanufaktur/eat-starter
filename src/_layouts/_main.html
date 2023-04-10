@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    {% favicon 'src/assets/images/favicon.png' %}
+    {% favicon 'src/_static/images/favicon.png' %}
 
     <!-- SEO -->
     {% block seo %}
@@ -51,7 +51,7 @@
     {% endif %}
     <meta
       property="og:image"
-      content="{{ config.url }}/assets/images/ogimage.png"
+      content="{{ config.url }}/_static/images/ogimage.png"
     />
     {% endblock %}
 
@@ -66,11 +66,18 @@
     {% endif %}
     <meta
       name="twitter:image"
-      content="{{ config.url }}/assets/images/ogimage.png"
+      content="{{ config.url }}/_static/images/ogimage.png"
     />
     {% endblock %}
   </head>
-  <body class="bg-neutral-200">
-    {{ content | safe }}
+  <body class="bg-white text-black">
+    <!-- HEADER -->
+    {% block header %}{% include "header.html" %}{% endblock %}
+
+    <!-- CONTENT_main -->
+    {% block content %}{{ content | safe }}{% endblock %}
+
+    <!-- FOOTER -->
+    {% block footer %}{% include "footer.html" %}{% endblock %}
   </body>
 </html>

@@ -1,5 +1,8 @@
----
-layout: base.html
----
+{% extends "src/_layouts/_main.html" %}
 
-<article class="mx-auto max-w-2xl prose">{{ content | safe }}</article>
+<!-- CONTENT_page -->
+{% block content %}
+<main class="">
+  <article class="mx-auto max-w-2xl prose p-4">{{ content | safe }}</article>
+</main>
+{% endblock %}

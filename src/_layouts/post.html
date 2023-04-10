@@ -1,5 +1,6 @@
----
-layout: base.html
----
+{% extends "src/_layouts/_main.html" %}
 
-{{ content | safe }}
+<!-- CONTENT_post -->
+{% block content %}
+<main>{{ content | safe }}</main>
+{% endblock %}
