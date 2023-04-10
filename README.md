@@ -53,7 +53,8 @@ Submit a pull request with a meaningful explanation of how and why your changes 
 License
 This project is licensed under the [GNU General Public License v2.0](https://opensource.org/license/gpl-2-0/).
 
-Dependencies
+## Dependencies
+
 This project uses the following packages:
 
 - @11ty/eleventy
