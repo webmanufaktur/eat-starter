@@ -84,4 +84,4 @@ Please make sure to update and extend them as needed.
 
 ### Contact
 
-For any questions or concerns, please contact us at [gheatstarter@webmanufaktur.net](mailto:gheatstarter@webmanufaktur.net).
+For any questions or concerns, please contact us at [webmanufaktur@duck.com](mailto:webmanufaktur@duck.com).
