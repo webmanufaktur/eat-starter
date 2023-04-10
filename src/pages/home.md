@@ -40,7 +40,7 @@ _Alternatively, you can build the project for deployment by running:_
 npm run build
 ```
 
-This will export the build to the _\_site_ folder.
+This will export the build to the _**\_site**_ folder.
 
 Change the _**src/\_data/config.js**_ file to match your project. This file contains important and necessary environment variables that you need to update.
 
