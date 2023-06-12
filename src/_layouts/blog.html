@@ -1,0 +1,13 @@
+{% extends "src/_layouts/_main.html" %}
+
+<!-- CONTENT_main -->
+{% block content %}
+<!-- asd -->
+{{ content | safe }}
+<!-- asd -->
+<ul>
+  {% for post in collections.posts %}
+  <li>{{ loop.index }} {{ post.data.title }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

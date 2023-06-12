@@ -1,7 +1,34 @@
-<header>
-  <div class="py-8 text-center">
-    <span>
-      <a href="/" class="font-bold text-3xl">{{ config.title }}</a>
-    </span>
+<header class="mt-4 lg:flex lg:items-center lg:justify-between">
+  <div class="flex items-center justify-between">
+    <a href="/" class="block font-bold">{{ config.title }}</a>
+    <button id="nav-menu" class="block rounded bg-gray-200 p-1 lg:hidden">
+      <svg
+        fill="currentColor"
+        class="h-8 w-8 text-gray-800"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Menu</title>
+        <path
+          class="astronav-toggle"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
+        ></path>
+        <path
+          class="astronav-toggle hidden"
+          fill-rule="evenodd"
+          d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+        ></path>
+      </svg>
+    </button>
   </div>
+
+  <!-- Navigation -->
+  {% include "partials/nav.html" ignore missing %}
+
+  <!-- Log in / Sign up -->
+  {% include "partials/loginsignup.html" ignore missing %}
 </header>

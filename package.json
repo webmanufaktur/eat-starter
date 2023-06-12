@@ -8,7 +8,7 @@
     "build:clean": "del _site",
     "dev:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --watch",
     "build:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --minify",
-    "dev:eleventy": "npx @11ty/eleventy --serve",
+    "dev:eleventy": "DEVMODE=true npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
     "dev:alpine": "npx esbuild ./src/assets/js/alpine.js --bundle --target=es2018  --watch --outfile=./_site/assets/js/alpine.dist.js",
     "build:alpine": "npx esbuild ./src/assets/js/alpine.js --bundle --target=es2018 --minify --outfile=./_site/assets/js/alpine.dist.js",
@@ -39,17 +39,17 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@alpinejs/persist": "^3.12.2",
     "@tailwindcss/typography": "^0.5.9",
-    "alpinejs": "^3.12.0",
-    "@alpinejs/persist": "^3.12.0",
+    "alpinejs": "^3.12.2",
     "clean-css": "^5.3.2",
     "del-cli": "^5.0.0",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.1.4",
     "eleventy-favicon": "^1.1.3",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-plugin-toc": "^1.1.5",
-    "esbuild": "^0.17.16",
+    "esbuild": "^0.18.1",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7",
@@ -57,7 +57,10 @@
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-link-attributes": "^4.0.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.7",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0"
   }
 }

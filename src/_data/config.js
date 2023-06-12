@@ -10,7 +10,10 @@ module.exports = function () {
     version: "2 (DEV)",
     locale: "en_EN",
     lang: "en",
+    devmode: process.env.DEVMODE,
     domain: process.env.DOMAIN || "localhost:8080",
     url: process.env.URL || "http://localhost:8080",
   };
 };
+
+console.log("Our environment is: " + process.env.DEVMODE);

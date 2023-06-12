@@ -70,7 +70,7 @@
     />
     {% endblock %}
   </head>
-  <body class="mx-auto max-w-screen-xl bg-white px-5 text-black lg:px-8">
+  <body class="bg-white text-black">
     <!-- HEADER -->
     {% block header %}{% include "header.html" %}{% endblock %}
 
@@ -79,8 +79,10 @@
 
     <!-- FOOTER -->
     {% block footer %}{% include "footer.html" %}{% endblock %}
+
     <hr />
-    {% if config.devmode %} DEV MODE: ON {% else %} DEV MODE: OFF {% endif %}
-    <script></script>
+    DEV
+    <hr />
+    {% if not process.env.DEVMODE %} if {% else %} else {% endif %}
   </body>
 </html>

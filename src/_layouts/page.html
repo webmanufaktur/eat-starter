@@ -2,7 +2,10 @@
 
 <!-- CONTENT_page -->
 {% block content %}
-<main class="">
-  <article class="mx-auto max-w-2xl prose p-4">{{ content | safe }}</article>
+<main class="bg-red-200 pb-24 pt-12">
+  <article class="prose max-w-none">
+    <div>{{ title }}</div>
+    <div>{{ content | safe }}</div>
+  </article>
 </main>
 {% endblock %}

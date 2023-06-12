@@ -4,9 +4,10 @@ permalink: "/"
 seotitle: "SSG Starter with Eleventy (11ty), AlpineJS, and TailwindCSS"
 seodesc: "Starter Kit for Static Websites using Eleventy (11ty), AlpineJS, and TailwindCSS. SEO, PageSpeed, 11ty Image included."
 seorobots: "index, follow"
+layout: "new.html"
 ---
 
-# Eleventy Starter Project with TailwindCSS and AlpineJS
+## Eleventy Starter Project with TailwindCSS and AlpineJS
 
 This is an Eleventy Starter Project that comes with pre-configured support for TailwindCSS and AlpineJS, which are two popular front-end development frameworks. This starter project can be used as a foundation for your web projects.
 

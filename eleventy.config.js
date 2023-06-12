@@ -328,7 +328,7 @@ module.exports = function (eleventyConfig) {
   // HTML MINIFIER
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (
-      !process.env.BUILD_DRAFTS &&
+      !process.env.DEVMODE &&
       this.outputPath &&
       this.outputPath.endsWith(".html")
     ) {
@@ -353,7 +353,9 @@ module.exports = function (eleventyConfig) {
     function () {
       return (data) => {
         // Always exclude from non-watch/serve builds
-        if (data.draft && !process.env.BUILD_DRAFTS) {
+
+        // if (data.draft && !process.env.BUILD_DRAFTS) {
+        if (data.draft && !process.env.DEVMODE) {
           return true;
         }
 
@@ -365,7 +367,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", ({ runMode }) => {
     // Set the environment variable
     if (runMode === "serve" || runMode === "watch") {
-      process.env.BUILD_DRAFTS = true;
+      process.env.BUILD_DRAFTS = false;
     }
   });
 
