@@ -4,7 +4,6 @@
   "description": "E-A-T Starter - Eleventy, Alpine, Tailwind Starter",
   "main": "README.md",
   "scripts": {
-    "dev:clean": "del _site",
     "build:clean": "del _site",
     "dev:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --watch",
     "build:tailwind": "npx tailwindcss -i ./src/assets/css/tailwind.css -c tailwind.config.js -o ./_site/assets/css/tailwind.dist.css --minify",

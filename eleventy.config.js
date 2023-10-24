@@ -149,6 +149,8 @@ module.exports = function (eleventyConfig) {
   // Set directories to pass through to the _site folder
   // eleventyConfig.addPassthroughCopy("src/assets/fonts/");
   // eleventyConfig.addPassthroughCopy("src/assets/images/");
+  eleventyConfig.addPassthroughCopy("src/assets/fonts/");
+  eleventyConfig.addPassthroughCopy("src/assets/img/");
 
   // Inline SVGs
   eleventyConfig.addPlugin(svgContents);
